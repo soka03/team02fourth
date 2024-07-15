@@ -1,3 +1,12 @@
 from django.contrib import admin
+from django.contrib import admin
+## from .models import Board
+from .models import Post, Comment
+"""
+class BoardAdmin(admin.ModelAdmin):
+    readonly_fields = ('date',)
 
-# Register your models here.
+admin.site.register(Board, BoardAdmin)
+"""
+admin.site.register(Post)
+admin.site.register(Comment)
