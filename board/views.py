@@ -73,11 +73,11 @@ def init_db(request):
                 # for j in actor:
                 #     if j=='name':
                 #         print('name')
-                # secondserializer=ActorSerializer(data=actor,movie=post)
                 secondserializer=ActorSerializer(data=actor)
+                # secondserializer=ActorSerializer(data=actor)
 
                 if secondserializer.is_valid():
-                    secondserializer.save()
+                    secondserializer.save(movies=post)
 
             
             # response=MovieSerializer(post)
