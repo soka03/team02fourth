@@ -73,16 +73,16 @@ def init_db(request):
                 # for j in actor:
                 #     if j=='name':
                 #         print('name')
-                secondserializer=ActorSerializer(data=actor,movies=post)
+                secondserializer=ActorSerializer(data=actor)
                 # secondserializer=ActorSerializer(data=actor)
 
                 if secondserializer.is_valid():
-                    secondserializer.save()
+                    secondserializer.save(movies=post)
 
             
             # response=MovieSerializer(post)
-            return Response(serializer.data,status=status.HTTP_201_CREATED)
-        return Response(status=status.HTTP_400_BAD_REQUEST)
+    return Response(serializer.data,status=status.HTTP_201_CREATED)
+# return Response(status=status.HTTP_400_BAD_REQUEST)
             
 
 '''
